@@ -12,8 +12,8 @@
         
         body {
             background-color: #020617;
-            /* استخدام نفس الخلفية الموجودة في الصورة */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            /* الخلفية المطابقة للصورة */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                               url('https://r4.wallpaperflare.com/wallpaper/790/310/240/man-digital-art-neon-hoodie-wallpaper-9990e87d312a0dcb4687d85fc0c1466d.jpg');
             background-size: cover;
             background-position: center;
@@ -29,7 +29,7 @@
 
         .main-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
         }
 
@@ -42,61 +42,62 @@
         }
 
         .job-title {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 3px;
             color: #fff;
             display: block;
             margin-bottom: 2px;
+            font-weight: bold;
         }
 
         .uni-text {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #fff;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             display: block;
         }
 
-        /* تنسيق شبكة الأزرار النيون */
+        /* شبكة الأزرار النيون المطابقة للصورة */
         .neon-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
         }
 
         .neon-box {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
             border: 3px solid;
             border-radius: 25px;
-            padding: 30px 10px;
+            padding: 25px 10px;
             text-decoration: none;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            transition: 0.4s;
+            transition: all 0.3s ease-in-out;
         }
 
-        .neon-box i { font-size: 2.5rem; }
+        .neon-box i { font-size: 2.2rem; }
         .neon-box span { font-size: 0.85rem; font-weight: bold; }
 
-        /* الألوان مطابقة للصورة حرفياً */
-        .white-glow { border-color: #ffffff; box-shadow: 0 0 15px #ffffff; }
-        .cyan-glow  { border-color: #00f2ff; box-shadow: 0 0 15px #00f2ff; }
-        .green-glow { border-color: #39ff14; box-shadow: 0 0 15px #39ff14; }
-        .red-glow   { border-color: #ff3131; box-shadow: 0 0 15px #ff3131; }
-        .pink-glow  { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
-        .blue-glow  { border-color: #0062ff; box-shadow: 0 0 15px #0062ff; }
+        /* الألوان وتأثيرات التوهج */
+        .white-glow { border-color: #ffffff; box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        .cyan-glow  { border-color: #00f2ff; box-shadow: 0 0 15px rgba(0,242,255,0.4); }
+        .green-glow { border-color: #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+        .red-glow   { border-color: #ff3131; box-shadow: 0 0 15px rgba(255,49,49,0.4); }
+        .pink-glow  { border-color: #ff00ff; box-shadow: 0 0 15px rgba(255,0,255,0.4); }
+        .blue-glow  { border-color: #0062ff; box-shadow: 0 0 15px rgba(0,98,255,0.4); }
 
         .neon-box:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: scale(1.05);
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* لضمان استجابة الموبايل */
-        @media (max-width: 350px) {
-            .neon-grid { grid-template-columns: 1fr; }
+        @media (max-width: 380px) {
+            .header-name { font-size: 2.5rem; }
+            .neon-grid { gap: 10px; }
         }
     </style>
 </head>
@@ -105,7 +106,7 @@
     <div class="main-container">
         <h1 class="header-name">Swe.Adel</h1>
         <span class="job-title">SOFTWARE ENGINEER</span>
-        <span class="uni-text">Al-Zaytoonah University</span>
+        <span class="uni-text">جامعة الزيتونة الأردنية</span>
 
         <div class="neon-grid">
             <a href="https://github.com/sweadel" target="_blank" class="neon-box white-glow">
@@ -114,18 +115,18 @@
             </a>
 
             <a href="#" target="_blank" class="neon-box cyan-glow">
-                <i class="fab fa-linkedin-in"></i>
-                <span>Lin Profile</span>
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
             </a>
 
             <a href="https://wa.me/962785166443" target="_blank" class="neon-box green-glow">
                 <i class="fab fa-whatsapp"></i>
-                <span>Direct WhatsApp</span>
+                <span>WhatsApp</span>
             </a>
 
             <a href="mailto:adel11amer11@gmail.com" class="neon-box red-glow">
-                <i class="far fa-envelope"></i>
-                <span>Professional Email</span>
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
             </a>
 
             <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="neon-box pink-glow">
