@@ -9,8 +9,8 @@
     
     <style>
         :root {
-            --neon-blue: #00f2ff;
-            --neon-purple: #bc13fe;
+            --neon-cyan: #00f2ff;
+            --neon-blue: #0062ff;
             --bg-dark: #020617;
         }
 
@@ -18,7 +18,9 @@
         
         body {
             background-color: var(--bg-dark);
-            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(0, 242, 255, 0.05) 0, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 98, 255, 0.08) 0, transparent 40%);
             color: white;
             font-family: 'Tajawal', sans-serif;
             display: flex;
@@ -28,128 +30,137 @@
             padding: 20px;
         }
 
-        .main-card {
-            background: rgba(255, 255, 255, 0.02);
+        .container {
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 50px 30px;
             border-radius: 40px;
             text-align: center;
-            max-width: 480px;
+            max-width: 450px;
             width: 100%;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
         }
 
-        /* صورة المبرمج الفخمة */
+        /* صورة المبرمج الغامض */
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 3px solid var(--neon-blue);
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px var(--neon-blue);
+            border: 2px solid var(--neon-cyan);
+            padding: 5px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
             object-fit: cover;
         }
 
         .name {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
-            background: linear-gradient(to bottom, #fff, var(--neon-blue));
+            background: linear-gradient(to bottom, #fff, var(--neon-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .title {
             color: #94a3b8;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
             display: block;
+            margin-bottom: 5px;
         }
 
         .university {
-            color: var(--neon-blue);
-            font-weight: bold;
+            color: var(--neon-cyan);
             font-size: 1rem;
+            font-weight: bold;
             margin-bottom: 40px;
             display: block;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
         }
 
-        .links-container {
+        /* شبكة الأزرار الكبيرة */
+        .links-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* تقسيم الأزرار لصفين بجانب بعض */
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .link-card {
-            background: rgba(255, 255, 255, 0.05);
+        .btn-large {
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px 15px;
-            border-radius: 20px;
+            padding: 30px 15px;
+            border-radius: 25px;
             text-decoration: none;
             color: white;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        .link-card i {
-            font-size: 2.5rem; /* أيقونات كبيرة */
+        .btn-large i {
+            font-size: 2.8rem; /* أيقونات ضخمة وفخمة */
+            transition: 0.3s;
         }
 
-        .link-card span {
+        .btn-large span {
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        /* تأثيرات الألوان عند الحوم (Hover) */
-        .link-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.1);
+        /* تأثيرات النيون عند الحوم */
+        .btn-large:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.07);
         }
 
-        .github:hover { border-color: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.2); }
-        .linkedin:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0,119,181,0.3); }
-        .whatsapp:hover { border-color: #25d366; box-shadow: 0 0 15px rgba(37,211,102,0.3); }
-        .email:hover { border-color: #ea4335; box-shadow: 0 0 15px rgba(234,67,53,0.3); }
+        .gh:hover { border-color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .li:hover { border-color: #0077b5; box-shadow: 0 0 20px rgba(0,119,181,0.3); }
+        .wa:hover { border-color: #25d366; box-shadow: 0 0 20px rgba(37,211,102,0.3); }
+        .ml:hover { border-color: #ea4335; box-shadow: 0 0 20px rgba(234,67,53,0.3); }
 
-        /* موبايل: جعل الأزرار تأخذ عرض كامل */
-        @media (max-width: 400px) {
-            .links-container { grid-template-columns: 1fr; }
+        .insta-full {
+            grid-column: span 2;
+            padding: 20px;
+            flex-direction: row;
+            justify-content: center;
         }
+        .insta-full i { font-size: 1.8rem; color: #e1306c; }
+
     </style>
 </head>
 <body>
 
-    <div class="main-card">
-        <img src="https://img.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-business-icon-concept-isolated-flat-cartoon-style_138676-2387.jpg" class="profile-img" alt="Swe.Adel">
+    <div class="container">
+        <img src="https://img.freepik.com/premium-photo/hacker-with-hoodie-dark-background_931878-10332.jpg" class="profile-img" alt="Swe.Adel">
         
         <h1 class="name">Swe.Adel</h1>
         <span class="title">SOFTWARE ENGINEER</span>
         <span class="university">جامعة الزيتونة الأردنية</span>
 
-        <div class="links-container">
-            <a href="https://github.com/sweadel" target="_blank" class="link-card github">
+        <div class="links-grid">
+            <a href="https://github.com/sweadel" target="_blank" class="btn-large gh">
                 <i class="fab fa-github"></i>
                 <span>Repository</span>
             </a>
-            <a href="#" target="_blank" class="link-card linkedin">
+            <a href="#" target="_blank" class="btn-large li">
                 <i class="fab fa-linkedin"></i>
-                <span>Lin Profile</span>
+                <span>LinkedIn</span>
             </a>
-            <a href="https://wa.me/962785166443" target="_blank" class="link-card whatsapp">
+            <a href="https://wa.me/962785166443" target="_blank" class="btn-large wa">
                 <i class="fab fa-whatsapp"></i>
                 <span>WhatsApp</span>
             </a>
-            <a href="mailto:adel11amer11@gmail.com" class="link-card email">
+            <a href="mailto:adel11amer11@gmail.com" class="btn-large ml">
                 <i class="fas fa-envelope"></i>
                 <span>Email</span>
             </a>
-            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="link-card" style="grid-column: span 2;">
-                <i class="fab fa-instagram" style="color: #e1306c;"></i>
+            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="btn-large insta-full">
+                <i class="fab fa-instagram"></i>
                 <span>Follow on Instagram</span>
             </a>
         </div>
