@@ -10,7 +10,9 @@
     <style>
         :root {
             --neon-cyan: #00f2ff;
-            --neon-blue: #0062ff;
+            --neon-green: #39ff14;
+            --neon-pink: #ff00ff;
+            --neon-red: #ff3131;
             --bg-dark: #020617;
         }
 
@@ -18,9 +20,10 @@
         
         body {
             background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(0, 242, 255, 0.05) 0, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(0, 98, 255, 0.08) 0, transparent 40%);
+            background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), 
+                              url('https://img.freepik.com/premium-photo/hacker-with-hoodie-dark-background_931878-10332.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             font-family: 'Tajawal', sans-serif;
             display: flex;
@@ -30,138 +33,121 @@
             padding: 20px;
         }
 
-        .container {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
+        .phone-container {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 50px 30px;
-            border-radius: 40px;
+            padding: 40px 25px;
+            border-radius: 50px;
             text-align: center;
-            max-width: 450px;
+            max-width: 420px;
             width: 100%;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
         }
 
-        /* صورة المبرمج الغامض */
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 2px solid var(--neon-cyan);
-            padding: 5px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--neon-cyan);
             object-fit: cover;
         }
 
         .name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            background: linear-gradient(to bottom, #fff, var(--neon-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
-        }
-
-        .title {
-            color: #94a3b8;
-            letter-spacing: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .university {
+            font-size: 2.5rem;
             color: var(--neon-cyan);
-            font-size: 1rem;
-            font-weight: bold;
-            margin-bottom: 40px;
-            display: block;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* شبكة الأزرار الكبيرة */
+        .sub-title {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .uni-name {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* شبكة الأزرار مثل الصورة */
         .links-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .btn-large {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 15px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             gap: 15px;
         }
 
-        .btn-large i {
-            font-size: 2.8rem; /* أيقونات ضخمة وفخمة */
+        .nav-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            padding: 20px 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             transition: 0.3s;
         }
 
-        .btn-large span {
-            font-weight: bold;
-            font-size: 0.95rem;
+        .nav-card i { font-size: 2rem; }
+        .nav-card span { font-size: 0.85rem; font-weight: bold; }
+
+        /* ألوان النيون المخصصة */
+        .repo { border-color: white; box-shadow: inset 0 0 10px rgba(255,255,255,0.2); }
+        .lin  { border-color: var(--neon-cyan); box-shadow: inset 0 0 10px rgba(0,242,255,0.2); }
+        .wa   { border-color: var(--neon-green); box-shadow: inset 0 0 10px rgba(57,255,20,0.2); }
+        .mail { border-color: var(--neon-red); box-shadow: inset 0 0 10px rgba(255,49,49,0.2); }
+        .ins  { border-color: var(--neon-pink); box-shadow: inset 0 0 10px rgba(255,0,255,0.2); }
+        .fb   { border-color: var(--neon-blue); box-shadow: inset 0 0 10px rgba(0,98,255,0.2); }
+
+        .nav-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
         }
-
-        /* تأثيرات النيون عند الحوم */
-        .btn-large:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.07);
-        }
-
-        .gh:hover { border-color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .li:hover { border-color: #0077b5; box-shadow: 0 0 20px rgba(0,119,181,0.3); }
-        .wa:hover { border-color: #25d366; box-shadow: 0 0 20px rgba(37,211,102,0.3); }
-        .ml:hover { border-color: #ea4335; box-shadow: 0 0 20px rgba(234,67,53,0.3); }
-
-        .insta-full {
-            grid-column: span 2;
-            padding: 20px;
-            flex-direction: row;
-            justify-content: center;
-        }
-        .insta-full i { font-size: 1.8rem; color: #e1306c; }
-
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="phone-container">
         <img src="https://img.freepik.com/premium-photo/hacker-with-hoodie-dark-background_931878-10332.jpg" class="profile-img" alt="Swe.Adel">
         
         <h1 class="name">Swe.Adel</h1>
-        <span class="title">SOFTWARE ENGINEER</span>
-        <span class="university">جامعة الزيتونة الأردنية</span>
+        <span class="sub-title">Software Engineer</span>
+        <span class="uni-name">Al-Zaytoonah University</span>
 
         <div class="links-grid">
-            <a href="https://github.com/sweadel" target="_blank" class="btn-large gh">
+            <a href="https://github.com/sweadel" target="_blank" class="nav-card repo">
                 <i class="fab fa-github"></i>
                 <span>Repository</span>
             </a>
-            <a href="#" target="_blank" class="btn-large li">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
+            <a href="#" target="_blank" class="nav-card lin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>Lin Profile</span>
             </a>
-            <a href="https://wa.me/962785166443" target="_blank" class="btn-large wa">
+            <a href="https://wa.me/962785166443" target="_blank" class="nav-card wa">
                 <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
+                <span>Direct WhatsApp</span>
             </a>
-            <a href="mailto:adel11amer11@gmail.com" class="btn-large ml">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
+            <a href="mailto:adel11amer11@gmail.com" class="nav-card mail">
+                <i class="far fa-envelope"></i>
+                <span>Professional Email</span>
             </a>
-            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="btn-large insta-full">
+            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="nav-card ins">
                 <i class="fab fa-instagram"></i>
-                <span>Follow on Instagram</span>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/share/1GnqrtX18u/" target="_blank" class="nav-card fb">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
             </a>
         </div>
     </div>
