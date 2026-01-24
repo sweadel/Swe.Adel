@@ -3,95 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المهندس عادل جعارة</title>
+    <title>عادل جعارة | Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #00d2ff;
+            --secondary-color: #3a7bd5;
+            --bg-dark: #050b18;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a; /* لون غامق عصري */
+            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, #050b18 0%, #091227 100%);
             color: white;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
-        .profile-container {
+        /* حاوية الصفحة مع حركة ظهور */
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 30px;
+            border-radius: 40px;
             text-align: center;
             max-width: 400px;
-            width: 100%;
+            width: 90%;
+            animation: fadeIn 1.2s ease-out;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
-        .avatar {
-            width: 100px;
-            height: 100px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* صورة البروفايل مع تأثير النبض */
+        .profile-wrapper {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 25px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            padding: 5px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .pulse {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            background: var(--primary-color);
+            opacity: 0.2;
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.9); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(0.9); }
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 10px; color: #fff; }
+        .tagline { color: var(--primary-color); font-weight: 700; margin-bottom: 5px; display: block; }
+        .uni { color: #8892b0; font-size: 0.9rem; margin-bottom: 30px; display: block; }
+
+        .links-list { display: flex; flex-direction: column; gap: 18px; }
+
+        .link-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border: 4px solid #1e293b;
-            margin-inline: auto;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        p {
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .link-card {
-            background-color: #1e293b;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 20px;
             text-decoration: none;
-            color: white;
+            color: #e6f1ff;
             font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid #334155;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item i {
+            font-size: 1.4rem;
+            width: 40px;
             text-align: center;
         }
 
-        .link-card:hover {
-            transform: translateY(-3px);
-            background-color: #334155;
-            border-color: #3b82f6;
+        .link-item span { flex-grow: 1; text-align: center; margin-right: -40px; }
+
+        .link-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
         }
 
-        /* ألوان مخصصة لكل منصة عند الحوم فوقها */
-        .github:hover { border-color: #f0f6fc; }
-        .instagram:hover { border-color: #e1306c; }
-        .facebook:hover { border-color: #1877f2; }
+        /* ألوان أيقونات */
+        .fa-github { color: #f0f6fc; }
+        .fa-whatsapp { color: #25d366; }
+        .fa-envelope { color: #ea4335; }
+        .fa-instagram { color: #e1306c; }
+        .fa-facebook { color: #1877f2; }
 
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <div class="avatar">A</div>
+    <div class="container">
+        <div class="profile-wrapper">
+            <div class="pulse"></div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="عادل جعارة" class="profile-img">
+        </div>
         
-        <h1>المهندس عادل جعارة</h1>
-        <p>Software Engineering Student</p>
+        <h1>عادل جعارة</h1>
+        <span class="tagline">Software Engineering Student</span>
+        <span class="uni">جامعة الزيتونة الأردنية</span>
 
-        <div class="links-container">
-            <a href="https://github.com/sweadel" target="_blank" class="link-card github">GitHub</a>
-            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="link-card instagram">Instagram</a>
-            <a href="https://www.facebook.com/share/1GnqrtX18u/" target="_blank" class="link-card facebook">Facebook</a>
+        <div class="links-list">
+            <a href="https://github.com/sweadel" target="_blank" class="link-item">
+                <i class="fab fa-github"></i> <span>GitHub</span>
+            </a>
+            <a href="https://wa.me/962785166443" target="_blank" class="link-item">
+                <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+            </a>
+            <a href="mailto:adel11amer11@gmail.com" class="link-item">
+                <i class="fas fa-envelope"></i> <span>Email</span>
+            </a>
+            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="link-item">
+                <i class="fab fa-instagram"></i> <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/share/1GnqrtX18u/" target="_blank" class="link-item">
+                <i class="fab fa-facebook"></i> <span>Facebook</span>
+            </a>
         </div>
     </div>
 
