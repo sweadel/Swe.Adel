@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swe.Adel | Software Engineer</title>
+    <title>Swe.Adel | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     
@@ -12,9 +12,9 @@
         
         body {
             background-color: #020617;
-            /* هاد الرابط لصورة المبرمج اللي طلبتها */
-            background-image: linear-gradient(rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.6)), 
-                              url('https://img.freepik.com/premium-photo/hacker-with-hoodie-dark-background_931878-10332.jpg');
+            /* استخدام نفس الخلفية الموجودة في الصورة */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://r4.wallpaperflare.com/wallpaper/790/310/240/man-digital-art-neon-hoodie-wallpaper-9990e87d312a0dcb4687d85fc0c1466d.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -27,110 +27,113 @@
             padding: 20px;
         }
 
-        .phone-frame {
+        .main-container {
             width: 100%;
             max-width: 400px;
             text-align: center;
-            padding: 20px;
         }
 
-        .name-logo {
+        .header-name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: #00f2ff;
             margin-bottom: 5px;
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.7);
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
         }
 
-        .sub-title {
+        .job-title {
             font-size: 0.8rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 2px;
             display: block;
+            margin-bottom: 2px;
         }
 
-        .university {
+        .uni-text {
             font-size: 0.85rem;
             color: #fff;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             display: block;
         }
 
-        /* شبكة الأزرار النيون */
-        .grid-container {
+        /* تنسيق شبكة الأزرار النيون */
+        .neon-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .neon-btn {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 2.5px solid;
+        .neon-box {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 3px solid;
             border-radius: 25px;
-            padding: 25px 10px;
+            padding: 30px 10px;
             text-decoration: none;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+            gap: 12px;
+            transition: 0.4s;
         }
 
-        .neon-btn i { font-size: 2.2rem; }
-        .neon-btn span { font-size: 0.8rem; font-weight: bold; }
+        .neon-box i { font-size: 2.5rem; }
+        .neon-box span { font-size: 0.85rem; font-weight: bold; }
 
-        /* الألوان حرفياً مثل الصورة */
-        .white-neon { border-color: #ffffff; box-shadow: 0 0 10px #ffffff, inset 0 0 5px #ffffff; }
-        .cyan-neon  { border-color: #00f2ff; box-shadow: 0 0 10px #00f2ff, inset 0 0 5px #00f2ff; }
-        .green-neon { border-color: #39ff14; box-shadow: 0 0 10px #39ff14, inset 0 0 5px #39ff14; }
-        .red-neon   { border-color: #ff3131; box-shadow: 0 0 10px #ff3131, inset 0 0 5px #ff3131; }
-        .pink-neon  { border-color: #ff00ff; box-shadow: 0 0 10px #ff00ff, inset 0 0 5px #ff00ff; }
-        .blue-neon  { border-color: #0062ff; box-shadow: 0 0 10px #0062ff, inset 0 0 5px #0062ff; }
+        /* الألوان مطابقة للصورة حرفياً */
+        .white-glow { border-color: #ffffff; box-shadow: 0 0 15px #ffffff; }
+        .cyan-glow  { border-color: #00f2ff; box-shadow: 0 0 15px #00f2ff; }
+        .green-glow { border-color: #39ff14; box-shadow: 0 0 15px #39ff14; }
+        .red-glow   { border-color: #ff3131; box-shadow: 0 0 15px #ff3131; }
+        .pink-glow  { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+        .blue-glow  { border-color: #0062ff; box-shadow: 0 0 15px #0062ff; }
 
-        .neon-btn:hover {
-            transform: scale(1.05);
+        .neon-box:hover {
+            transform: translateY(-10px) scale(1.05);
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* لضمان استجابة الموبايل */
+        @media (max-width: 350px) {
+            .neon-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="phone-frame">
-        <h1 class="name-logo">Swe.Adel</h1>
-        <span class="sub-title">SOFTWARE ENGINEER</span>
-        <span class="university">Al-Zaytoonah University</span>
+    <div class="main-container">
+        <h1 class="header-name">Swe.Adel</h1>
+        <span class="job-title">SOFTWARE ENGINEER</span>
+        <span class="uni-text">Al-Zaytoonah University</span>
 
-        <div class="grid-container">
-            <a href="https://github.com/sweadel" target="_blank" class="neon-btn white-neon">
+        <div class="neon-grid">
+            <a href="https://github.com/sweadel" target="_blank" class="neon-box white-glow">
                 <i class="fab fa-github"></i>
                 <span>Repository</span>
             </a>
 
-            <a href="#" target="_blank" class="neon-btn cyan-neon">
+            <a href="#" target="_blank" class="neon-box cyan-glow">
                 <i class="fab fa-linkedin-in"></i>
                 <span>Lin Profile</span>
             </a>
 
-            <a href="https://wa.me/962785166443" target="_blank" class="neon-btn green-neon">
+            <a href="https://wa.me/962785166443" target="_blank" class="neon-box green-glow">
                 <i class="fab fa-whatsapp"></i>
                 <span>Direct WhatsApp</span>
             </a>
 
-            <a href="mailto:adel11amer11@gmail.com" class="neon-btn red-neon">
+            <a href="mailto:adel11amer11@gmail.com" class="neon-box red-glow">
                 <i class="far fa-envelope"></i>
                 <span>Professional Email</span>
             </a>
 
-            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="neon-btn pink-neon">
+            <a href="https://www.instagram.com/dr._.818?igsh=MWtyazR1cHZ0ZXR2cg==" target="_blank" class="neon-box pink-glow">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
             </a>
 
-            <a href="https://www.facebook.com/share/1GnqrtX18u/" target="_blank" class="neon-btn blue-neon">
+            <a href="https://www.facebook.com/share/1GnqrtX18u/" target="_blank" class="neon-box blue-glow">
                 <i class="fab fa-facebook-f"></i>
                 <span>Facebook</span>
             </a>
